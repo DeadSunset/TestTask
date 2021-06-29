@@ -3,16 +3,17 @@ using UnityEngine;
 public class CircleMove : MonoBehaviour
 {
     public PointClick point;
-    public textChange change;
-    private float startTime;
-    private float journeyLength;
-    private LineRenderer _lineRenderer;
+    public TextChange change;
+
+    private float _startTime;
+    private float _journeyLength;
     private LineRenderer _line;
+    private float _fractionOfJourney = 0;
+    private float _distCovered = 0;
 
     void Start()
     {
-        startTime = Time.time;
-        journeyLength = 0;
+        ResetPoint();
     }
 
     void Update()
@@ -23,26 +24,37 @@ public class CircleMove : MonoBehaviour
             {
                 if (_line == null)
                 {
-                    _line = point.createLine(point.points[i], point.points[i + 1], _lineRenderer);
+                    _line = point.CreateLine(point.points[i], point.points[i + 1], _line);
                 }
             }
-            if (journeyLength == 0) journeyLength = Vector3.Distance(point.points[0], point.points[1]);
-            float distCovered = (Time.time - startTime) * change.speedValueSlider.value * 1000;
-            float fractionOfJourney = distCovered / journeyLength;
-            transform.position = Vector3.Lerp(point.points[0], point.points[1], fractionOfJourney);
-            if (fractionOfJourney > 1)
+            if (_journeyLength == 0)
             {
-                journeyLength = 0;
-                startTime = Time.time;
+                _journeyLength = Vector3.Distance(point.points[0], point.points[1]);
+            }
+            _fractionOfJourney = CountDistance();
+            if (_fractionOfJourney > 1)
+            {
+                ResetPoint();
                 point.points.RemoveAt(0);
                 Destroy(_line.gameObject);
-                _lineRenderer = null;
             }
         }
         else
         {
-            startTime = Time.time;
-            journeyLength = 0;
+            ResetPoint();
         }
+    }
+
+    private void ResetPoint()
+    {
+        _startTime = Time.time;
+        _journeyLength = 0;
+    }
+    private float CountDistance()
+    {
+        _distCovered = (Time.time - _startTime) * change.speedValueSlider.value * 1000;
+        _fractionOfJourney = _distCovered / _journeyLength;
+        transform.position = Vector3.Lerp(point.points[0], point.points[1], _fractionOfJourney);
+        return _fractionOfJourney;
     }
 }

@@ -289,7 +289,6 @@ GameObject:
   - component: {fileID: 564240866}
   - component: {fileID: 564240868}
   - component: {fileID: 564240867}
-  - component: {fileID: 564240869}
   - component: {fileID: 564240870}
   m_Layer: 5
   m_Name: SpeedText
@@ -359,32 +358,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564240865}
   m_CullTransparentMesh: 1
---- !u!61 &564240869
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564240865}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.1108551, y: -0.60354614}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 265.59305, y: 44.444336}
-  m_EdgeRadius: 0
 --- !u!114 &564240870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +381,6 @@ GameObject:
   m_Component:
   - component: {fileID: 813390347}
   - component: {fileID: 813390348}
-  - component: {fileID: 813390349}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -501,32 +473,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!61 &813390349
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813390346}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.5998459, y: -0.28974915}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 264.95868, y: 20.530792}
-  m_EdgeRadius: 0
 --- !u!1 &1036775405
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,8 +887,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startCircle: {fileID: 1673778678}
   point: {fileID: 9132490220073884033, guid: 4b645bd7da5131d4d88aba02f094d993, type: 3}
-  _mouseCanvasPosition: {x: 0, y: 0, z: 0}
   points: []
+  _mouseCanvasPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1430766155
 GameObject:
   m_ObjectHideFlags: 0
