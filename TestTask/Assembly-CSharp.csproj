@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\PointClick.cs" />
     <Compile Include="Assets\textChange.cs" />
+    <Compile Include="Assets\CircleMove.cs" />
+    <Compile Include="Assets\QuitApp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
